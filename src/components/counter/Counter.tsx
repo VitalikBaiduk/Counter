@@ -19,7 +19,7 @@ export const Counter = () => {
         }
         setTitle(newTitle)
     }
-s
+
     return (
         <div className={classes.firstDiv}>
             <p className={title === 5 ? classes.styleForCounterValue2 : classes.styleForCounterValue}>{title}</p>
