@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.DIV {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 10px solid #74e0fb;
+}
+
+.firstDiv {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #74e0fb;
+    border-radius: 10px;
+}
+
+.mainDiv {
+    width: 68%;
+    display: flex;
+    border: 1px solid #74e0fb;
+    justify-content: space-around;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+.red {
+    background: red;
+}
+
+.green {
+    background: green;
+}
+
+.styleForCounterValue {
+    width: 10px;
+    background-color: #74e0fb;
+    margin: 10px 10px 0 10px;
+    padding: 30px 90px;
+    font-size: 30px;
+    border-radius: 10px;
+    color: black
+}
+
+.styleForCounterValue2 {
+    width: 10px;
+    background-color: #74e0fb;
+    margin: 10px 10px 0 10px;
+    padding: 30px 90px;
+    font-size: 30px;
+    border-radius: 10px;
+    color: red
+}
+
+.styleForActiveButton {
+    background-color: #74e0fb;
+    border: none;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.styleForButton {
+    background-color: #4a7f8f;
+    border: none;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 10px;
+}
