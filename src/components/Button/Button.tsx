@@ -1,22 +1,35 @@
-import React, {useState} from 'react';
+import React, {SetStateAction, useState} from 'react';
 import classes from "../counter/Counter.module.css";
 import {TypeForButtonName} from "../counter/Counter";
 
-export type ButtonType = {
-    title?: number
-    name: TypeForButtonName
-    func: () => void
+enum ButtonNames {
+    INC = "Inc",
+    RESET = "Reset",
+    SET = "Set"
 }
 
-export const Button = (props: ButtonType) => {
+export type ButtonType = {
+    inputValue1?: string
+    inputValue2?: string
+    title: number
+    name: TypeForButtonName
+    func: () => void
+    onClick?:() => void
+    maxValue:number
+}
 
-    return props.name === "Inc" ?
-        <button className={props.title === 5 ? classes.styleForButton : classes.styleForActiveButton}
-                onClick={props.func}>{props.name}</button>
-        : props.name === "Reset" ? <button className={classes.styleForActiveButton}
-                  onClick={props.func}>{props.name}
-        </button> : <button className={classes.styleForButton}
-                             onClick={props.func}>{props.name}
-        </button>
+export const Button = ({name, title, maxValue, func, inputValue2}: ButtonType) => {
 
+    const isInc = name === ButtonNames.INC
+    const isRes = name === ButtonNames.RESET
+    const isSet = name === ButtonNames.SET
+
+    const incButtonClassname = ((title === maxValue) || (title < 0 || title > maxValue))
+        ? classes.styleForButton
+        : classes.styleForActiveButton
+
+    const resButtonClassName = (inputValue2 === "") ? classes.styleForButton : classes.styleForActiveButton
+    const buttonClassName = isInc ? incButtonClassname : isSet ? classes.styleForActiveButton : isRes ? resButtonClassName : ""
+
+    return <button className={buttonClassName} onClick={func}>{name}</button>
 }

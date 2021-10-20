@@ -42,3 +42,18 @@
     border-radius: 10px;
     padding: 5px 70px;
 }
+.errorInput{
+    width: 50%;
+    text-align: center;
+    margin-left: 4px;
+    background-color: red;
+    border-color: red;
+}
+.errorInput2{
+    width: 50%;
+    text-align: center;
+    margin-left: 4px;
+    background-color: red;
+    border-color: red;
+    margin-left: 11px;
+}

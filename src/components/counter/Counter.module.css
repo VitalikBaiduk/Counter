@@ -31,13 +31,6 @@
     margin: 10px;
 }
 
-.red {
-    background: red;
-}
-
-.green {
-    background: green;
-}
 
 .styleForCounterValue {
     width: 10px;
@@ -62,15 +55,28 @@
 .styleForActiveButton {
     background-color: #74e0fb;
     border: none;
-    padding: 5px 10px;
+    cursor: pointer;
     font-size: 20px;
     border-radius: 10px;
+    padding: 5px 10px;
 }
 
 .styleForButton {
     background-color: #4a7f8f;
     border: none;
-    padding: 5px 10px;
+    cursor: pointer;
     font-size: 20px;
     border-radius: 10px;
+    padding: 5px 10px;
 }
+
+.invalidValue {
+    position: relative;
+    left: -15px;
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+}
+/*.enterValue{*/
+/*    font-size: 10px;*/
+/*}*/
