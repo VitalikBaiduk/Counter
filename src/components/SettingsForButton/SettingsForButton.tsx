@@ -5,13 +5,12 @@ import {Button} from "../Button/Button";
 type SettingsForButtonType = {
     maxValue: number
     title: number
-    getFromLocalSt: () => void
-    setMaxInputValue: Dispatch<SetStateAction<string>>
-    setStartInputValue: Dispatch<SetStateAction<string>>
+    setMaxInputValue: (maxInputValue: string) => void
+    setStartInputValue: (startInputValue: string) => void
     maxInputValue: string
     startInputValue: string
-    setTitle: React.Dispatch<React.SetStateAction<number>>
-    setMaxValue: React.Dispatch<React.SetStateAction<number>>
+    onClickButton: () => void
+    buttonSet: () =>void
 }
 export const SettingsForButton = (props: SettingsForButtonType) => {
 
@@ -20,13 +19,6 @@ export const SettingsForButton = (props: SettingsForButtonType) => {
     }
     const onChange2 = (e: ChangeEvent<HTMLInputElement>) => {
         props.setStartInputValue(e.currentTarget.value)
-    }
-    const onClick = () => {
-        localStorage.setItem("maxInputValue", props.maxInputValue)
-        localStorage.setItem("startInputValue", props.startInputValue)
-        props.setTitle(+props.startInputValue)
-        props.setMaxValue(+props.maxInputValue)
-        props.getFromLocalSt()
     }
 
     return (
@@ -55,7 +47,7 @@ export const SettingsForButton = (props: SettingsForButtonType) => {
             </div>
             <div className={c.divButton}>
                 <Button maxValue={props.maxValue} title={props.title} inputValue2={props.startInputValue} name="Set"
-                        func={onClick}/>
+                        func={props.buttonSet}/>
             </div>
         </div>
     )

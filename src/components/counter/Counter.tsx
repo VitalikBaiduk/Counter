@@ -7,7 +7,7 @@ export type TypeForButtonName = "Inc" | "Reset" | "Set"
 type CounterType = {
     maxValue: number
     title: number
-    setTitle: Dispatch<SetStateAction<number>>
+    setTitle: (newTitle?: any) => void
     startInputValue: string
     maxInputValue: string
 }
@@ -26,11 +26,9 @@ export const Counter = ({title, ...props}: CounterType) => {
         }
         props.setTitle(newTitle)
     }
-
     const isCounterError = (title < 0)
         || (props.startInputValue === props.maxInputValue)
         || (title > props.maxValue)
-
 
     return (
         <div className={classes.firstDiv}>
